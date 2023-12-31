@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Photo Gallery</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<script>
+var photos  = [];
+
+photos.push({ image: "https://images.app.goo.gl/6CyAcWPBHBskvY596", title: "Harry Potter" });
+photos.push({ image: "https://images.app.goo.gl/vVfkCx8bQWvCwss27", title: "Lord of the Rings" });
+photos.push({ image: "https://images.app.goo.gl/rXvSQYvj894Diyt58", title: "Back To The Future" });
+
+
+function changeImage(name)
+{
+  var photo;
+  switch(name) {
+    case "harrypotter":
+        photo = photos[0];
+    break;
+
+    case "lordoftherings":
+        photo = photos[1];
+    break;
+
+    case "backtothefuture":
+        photo = photos[2];
+    break;
+  }
+
+  var photogallery = document.getElementById("photogallery");
+  var image = photogallery.getElementsByTagName("img");
+  var title = photogallery.getElementsByTagName("h3");
+  image[0].src = photo.image;
+  title[0].innerHTML = photo.title;
+}
+</script>
+</head>
+<body>
+	<div id = "main">
+		<h2> <u> Photo Gallery </u> </h2>
+		<p> The following photos are the DVD covers of my favourite film. </p>
+	   
+	   
+	   <div id="thumbnails">
+		   <img src="https://images.app.goo.gl/6CyAcWPBHBskvY596" onmouseover="changeImage('harrypotter')" alt = "Harry Potter Film Cover" width="110px" height="110px" />
+		   <img src="https://images.app.goo.gl/vVfkCx8bQWvCwss27" onmouseover="changeImage('lordoftherings')" alt = "Lord of the Rings Film Cover" width="110px" height="110px" />
+		   <img src="https://images.app.goo.gl/rXvSQYvj894Diyt58"        
+	   onmouseover="changeImage('backtothefuture')" alt = "Back To The Future Film Cover" width="110px" height="110px" />
+	   </div>
+	   <div id="photogallery">
+		   <img src="https://images.app.goo.gl/6CyAcWPBHBskvY596" alt="Harry Potter Film Cover" /><br />
+	   <h3><em>Harry Potter</em></h3>
+	   </div>
+	   </div>
+</body>
+</html>
+
